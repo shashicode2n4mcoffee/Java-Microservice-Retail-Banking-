@@ -1,0 +1,33 @@
+
+spring:
+  application:
+    name: retail-core-banking-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 1996
+    jpa:
+      hibernate:
+        ddl-auto: none
+
+flyway:
+  url: ${spring.datasource.url}
+  user: ${spring.datasource.username}
+  password: ${spring.datasource.password}
+  locations: classpath:db/migration
+
+logging:
+  level:
+    org.flywaydb: DEBUG
+
+server:
+  port: 8092
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka
+
+info:
+  app:
+    name: ${spring.application.name}
