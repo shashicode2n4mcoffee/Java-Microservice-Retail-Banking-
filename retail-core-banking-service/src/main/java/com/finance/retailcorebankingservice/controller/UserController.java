@@ -18,9 +18,9 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping(value = "/{identification}")
-    public ResponseEntity readUser(@PathVariable("identification") String identification) {
-        return ResponseEntity.ok(userService.readUser(identification));
+    @GetMapping(value = "/{customerIdentificationNumber}")
+    public ResponseEntity readUser(@PathVariable("customerIdentificationNumber") String customerIdentificationNumber) {
+        return ResponseEntity.ok(userService.readUser(customerIdentificationNumber));
     }
 
     @GetMapping
