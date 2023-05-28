@@ -18,6 +18,7 @@ public class UserController {
     @Autowired
     UserService userService;
 
+
     @GetMapping(value = "/{customerIdentificationNumber}")
     public ResponseEntity readUser(@PathVariable("customerIdentificationNumber") String customerIdentificationNumber) {
         return ResponseEntity.ok(userService.readUser(customerIdentificationNumber));
@@ -27,4 +28,5 @@ public class UserController {
     public ResponseEntity readUser(Pageable pageable) {
         return ResponseEntity.ok(userService.readUsers(pageable));
     }
+
 }

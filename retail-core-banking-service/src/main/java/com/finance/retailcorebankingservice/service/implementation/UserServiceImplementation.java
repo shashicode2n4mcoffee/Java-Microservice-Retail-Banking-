@@ -20,6 +20,7 @@ public class UserServiceImplementation implements UserService {
     UserRepository userRepository;
     @Override
     public User readUser(String customerIdentificationNumber) {
+        System.out.println("CUSTOMER NUMBER : "+ customerIdentificationNumber);
         UserEntity userEntity = userRepository.findByCustomerIdentificationNumber(customerIdentificationNumber).get();
         return userMapper.convertToDto(userEntity);
     }
